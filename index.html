@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>クイズアプリ</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #f5f5f5;
+        padding: 50px;
+      }
+      #quiz-box {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: auto;
+      }
+      .option-btn {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+      }
+      .option-btn:hover {
+        background: #0056b3;
+      }
+      #result {
+        font-weight: bold;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="quiz-box">
+      <h2 id="question">問題がここに表示されます</h2>
+      <div id="options"></div>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      // クイズデータ
+      const quizData = [
+        {
+          question: "HTMLの略は？",
+          options: ["HyperText Markup Language", "HighText Machine Language", "HyperTool Multi Language"],
+          answer: "HyperText Markup Language",
+        },
+        {
+          question: "CSSは何を指定するための言語？",
+          options: ["ページの構造", "ページの見た目", "ページの動き"],
+          answer: "ページの見た目",
+        },
+        {
+          question: "JavaScriptで正しい変数宣言は？",
+          options: ["var 1name;", "let name;", "const = name;"],
+          answer: "let name;",
+        },
+      ];
+
+      let currentQuestion = 0;
+      let score = 0;
+
+      function loadQuestion() {
+        const q = quizData[currentQuestion];
+        document.getElementById("question").textContent = q.question;
+        const optionsDiv = document.getElementById("options");
+        optionsDiv.innerHTML = "";
+        q.options.forEach((option) => {
+          const btn = document.createElement("button");
+          btn.textContent = option;
+          btn.className = "option-btn";
+          btn.onclick = () => checkAnswer(option);
+          optionsDiv.appendChild(btn);
+        });
+        document.getElementById("result").textContent = "";
+      }
+
+      function checkAnswer(selected) {
+        if (selected === quizData[currentQuestion].answer) {
+          score++;
+          document.getElementById("result").textContent = "正解！";
+          document.getElementById("result").style.color = "green";
+        } else {
+          document.getElementById("result").textContent = "不正解...";
+          document.getElementById("result").style.color = "red";
+        }
+
+        // 次の問題へ
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
+          setTimeout(loadQuestion, 1000);
+        } else {
+          setTimeout(showFinalScore, 1000);
+        }
+      }
+
+      function showFinalScore() {
+        document.getElementById("quiz-box").innerHTML = `<h2>終了！</h2>
+             <p>あなたのスコア: ${score} / ${quizData.length}</p>`;
+      }
+
+      // 最初の問題を表示
+      loadQuestion();
+    </script>
+  </body>
+</html>
