@@ -1,0 +1,107 @@
+/* point */
+
+.point {
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+.point dt {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.point-wrap {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+
+  padding: 95px 0 61px;
+  overflow: hidden;
+}
+
+.point-wrap:nth-child(n + 2) {
+  margin-top: 32px;
+}
+
+.point-image {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.point-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.point-text {
+  position: relative;
+  z-index: 1;
+  width: 58%;
+  padding: 50px 50px 75px;
+  text-align: center;
+  margin: 0 -50px 0 0;
+}
+
+.point-text::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.point-wrap.wrap01 {
+  flex-direction: column-reverse;
+}
+
+.point-wrap.wrap01 .point-image {
+  left: 43%;
+}
+
+@media screen and (max-width: 968px) {
+  .point-wrap,
+  .wrap01 {
+    display: block;
+    padding: 95px 24px;
+  }
+  .point-image {
+    left: 0;
+    /* height: 400px; */
+  }
+
+  .point-text {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .point-text dt {
+    font-size: 24px;
+  }
+
+  .point-wrap.wrap01 .point-image {
+    left: 0;
+  }
+
+  .point-wrap {
+    padding: 95px 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .point {
+    padding: 0;
+  }
+
+  .point-image {
+    width: 100%;
+  }
+}
