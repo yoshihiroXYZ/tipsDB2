@@ -10,12 +10,12 @@
   },
   {
     "title": "Quiz App",
-    "url": "https://github.com/your-name/quiz-app",
-    "thumb": "./images/thumbs/quiz-app.webp",
+    "url": "https://app.ys-db36.com/app1/public/index.php",
+    "thumb": "./images/thumbs/quiz-app1.png",
     "description": "学習用クイズアプリ。",
     "detail": "カテゴリー別出題、スコア保存（ローカルストレージ）、解説表示に対応した学習用Webアプリ。",
     "tags": ["JavaScript", "WebApp"],
-    "date": "2025-05-02"
+    "date": "2025-08-14"
   },
   {
     "title": "Landing Page",
