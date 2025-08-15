@@ -1,12 +1,12 @@
 [
   {
     "title": "UI Kit for SaaS",
-    "url": "https://example.com/saas-ui",
+    "url": "https://yoshihiroxyz.github.io/ys-work/contents/1/",
     "thumb": "./images/thumbs/landing.webp",
-    "description": "SaaS向けUIコンポーネント集。",
-    "detail": "SaaSダッシュボードを想定したUIコンポーネント集。ボタン、カード、チャート、フォームなどを再利用可能に設計。",
-    "tags": ["UI", "Design", "Figma"],
-    "date": "2025-07-20"
+    "description": "カフェホームページ1",
+    "detail": "スライダーや地図埋め込みといった機能実装を含むカフェのホームページ。",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "date": "2025-08-03"
   },
   {
     "title": "Quiz App",
