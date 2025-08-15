@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -282,13 +281,33 @@
         </div>
       </div>
     </div>
-    <footer id="footer"></footer>
-
-    <script>
-      fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => (document.querySelector("#footer").innerHTML = data));
-    </script>
+<footer class="footer">
+      <div class="link-lists">
+        <ul class="search-by-type-list">
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+        </ul>
+        <ul class="other-page-list">
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+        </ul>
+        <ul class="information-list">
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+          <li class="search-by-type-list-item"><a href="#">test</a></li>
+        </ul>
+        <ul class="footer-button-lists">
+          <li class="button-list"><a href="#">button</a></li>
+          <li class="button-list"><a href="#">button</a></li>
+        </ul>
+        <div class="copyright">Copyright (c) 2025 test, Inc. All Rights Reserved.</div>
+      </div>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>
   </body>

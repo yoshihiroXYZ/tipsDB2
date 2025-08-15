@@ -1,7 +1,925 @@
-@import url(./header.css);
-@import url(./menu.css);
-@import url(./point.css);
-@import url(./shopinfo.css);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+header,
+footer,
+nav,
+section,
+article,
+main,
+aside,
+figure,
+figcaption {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  vertical-align: top;
+}
+/* navigation area */
+/* #header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #6d8c8e;
+  color: #fefefe;
+  font-size: 14px;
+} */
+
+#header {
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 8;
+  font-family: "STIX Two Text", serif;
+  font-size: 24px;
+  color: #fff;
+  transition: all 0.6s;
+}
+
+/* .is-show {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+} */
+
+.navigation {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bg {
+  background: #6d8c8e;
+  z-index: 3;
+}
+
+.navigation a {
+  transition: all 0.4s;
+}
+
+.navigation a:hover {
+  opacity: 0.4;
+}
+
+.navigation .contents {
+  display: grid;
+  grid-template: "root-links main-links sub-links" 100% / auto 1fr auto;
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 12px;
+}
+
+.sub-links-area {
+  font-size: 28px;
+}
+
+.root-link-area {
+  display: flex;
+  align-items: center;
+  grid-area: root-links;
+  padding-right: 12px;
+}
+
+.main-link-area {
+  grid-row: 1;
+  grid-column: 3;
+  grid-area: main-links;
+  display: flex;
+  height: 100%;
+}
+
+.main-link {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-link:nth-child(n + 1) {
+  padding-right: 12px;
+}
+
+.sub-links-area {
+  display: flex;
+  height: 100%;
+  grid-area: sub-links;
+  gap: 12px;
+}
+
+.sub-link {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.tell_icon {
+  color: #fff;
+}
+
+@media screen and (min-width: 769px) {
+  .navigation {
+    height: 80px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    max-height: 120px;
+    font-size: 18px;
+  }
+
+  .navigation .contents {
+    grid-template: "root-links sub-links" 44px "main-links main-links" 44px / auto 1fr;
+    gap: 0 20px;
+  }
+  .root-link-area {
+    width: 110px;
+    display: flex;
+    align-items: center;
+    grid-area: root-links;
+  }
+  .main-link-area {
+    grid-row: 3;
+    grid-column: 1;
+    grid-area: main-links;
+    display: flex;
+    height: 100%;
+  }
+
+  .sub-links-area {
+    display: flex;
+    height: 100%;
+    grid-area: sub-links;
+    justify-self: right;
+    font-size: 22px;
+  }
+}
+
+/* nav submenu */
+.categorys {
+  height: 40px;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  max-width: 1070px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  overflow-x: auto;
+}
+
+.categorys-wrap {
+  max-width: 1170px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-link {
+  padding: 0 12px;
+}
+
+.wrap {
+  max-width: 1140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* menu */
+.menu {
+  padding-top: 40px;
+}
+
+.menu h3 {
+  border-bottom: 3px solid #999;
+  padding-top: 5px;
+  margin-bottom: 32px;
+}
+
+.menu span {
+  border-bottom: 1px solid #999;
+  padding-bottom: 12px;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+}
+
+.menu .inner {
+  display: flex;
+  width: 100%;
+  gap: 60px;
+}
+
+.menu .text {
+  width: 60%;
+  padding: 60px 0;
+}
+
+.menu image {
+  width: 40%;
+  z-index: 5;
+}
+
+.menu dl {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #aaa;
+  line-height: 2.5;
+}
+
+.menu dt {
+  width: 80%;
+}
+
+.menu dd {
+  width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+  .menu .inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu .text {
+    width: 100%;
+  }
+}
+
+/* set menu */
+.set-menu {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.set-menu h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.set-menu .inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.set-menu .text {
+  width: 60%;
+  padding: 60px 0;
+}
+
+.set-menu image {
+  width: 40%;
+  z-index: 5;
+}
+
+.set-menu dl {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #aaa;
+  line-height: 2.5;
+}
+
+.set-menu dt {
+  width: 60%;
+}
+
+.set-menu dd {
+  width: 40%;
+}
+
+/* point */
+
+.point {
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+.point dt {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.point-wrap {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+
+  padding: 95px 0 61px;
+  overflow: hidden;
+}
+
+.point-wrap:nth-child(n + 2) {
+  margin-top: 32px;
+}
+
+.point-image {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.point-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.point-text {
+  position: relative;
+  z-index: 1;
+  width: 58%;
+  padding: 50px 50px 75px;
+  text-align: center;
+  margin: 0 -50px 0 0;
+}
+
+.point-text::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.point-wrap.wrap01 {
+  flex-direction: column-reverse;
+}
+
+.point-wrap.wrap01 .point-image {
+  left: 43%;
+}
+
+@media screen and (max-width: 968px) {
+  .point-wrap,
+  .wrap01 {
+    display: block;
+    padding: 95px 24px;
+  }
+  .point-image {
+    left: 0;
+    /* height: 400px; */
+  }
+
+  .point-text {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .point-text dt {
+    font-size: 24px;
+  }
+
+  .point-wrap.wrap01 .point-image {
+    left: 0;
+  }
+
+  .point-wrap {
+    padding: 95px 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .point {
+    padding: 0;
+  }
+
+  .point-image {
+    width: 100%;
+  }
+}
+
+/* shopinfo */
+
+.shopinfo {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  font-size: 14px;
+}
+
+.shopinfo dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.shopinfo dl:nth-child(n + 2) {
+  border-top: 1px dashed #aaa;
+}
+
+.shopinfo dt {
+  width: 40%;
+  text-align: left;
+  background-color: #eee;
+  padding: 24px 12px;
+}
+
+.shopinfo dd {
+  width: 60%;
+  text-align: left;
+  padding: 24px 12px;
+  word-break: break-all;
+}
+
+.contents {
+  display: flex;
+  gap: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .contents {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shopinfo dt {
+    padding: 24px 6px;
+  }
+
+  .shopinfo dd {
+    padding: 24px 6px;
+  }
+}
+
+.shopinfo {
+  padding: 80px 12px;
+}
+
+.shopinfo iframe {
+  height: 100%;
+}
+
+.access,
+.contact {
+  width: 50%;
+}
+
+iframe {
+  width: 100%;
+}
+
+.slider {
+  width: 90%;
+}
+
+.wrap {
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 968px) {
+  .contents {
+    display: block;
+  }
+
+  .access,
+  .contact {
+    width: 100%;
+  }
+  .contact {
+    margin-top: 40px;
+    height: 480px;
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  .point-wrap {
+    display: block;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .shopinfo {
+    padding: 80px 0;
+  }
+}
+
+/* ======================== */
+/* レスポンシブ対応：モバイル向け調整 */
+/* ======================== */
+/* PC専用の改行タグを非表示にする */
+@media screen and (max-width: 767px) {
+  br.only-pc {
+    display: none;
+  }
+}
+
+/* ======================== */
+/* スライダー全体のスタイル */
+/* ======================== */
+.slider {
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* スライダーの表示領域 */
+.slider-viewport {
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* スライドを横並びに配置 */
+.slider-items {
+  display: flex;
+  pointer-events: none;
+}
+
+/* 各スライドを均等幅に設定 */
+.slider-slide {
+  flex: 1;
+}
+
+/* ======================== */
+/* スライド内の画像のスタイル */
+/* ======================== */
+/* スライド内の画像を比率固定で表示 */
+.slider-image {
+  position: relative;
+  aspect-ratio: 920/480;
+}
+.slider-image img {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ======================== */
+/* スライドテキストのスタイル */
+/* ======================== */
+.slider-text {
+  line-height: 1.8;
+}
+@media print, (min-width: 768px) {
+  .slider-text {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slider-text {
+    margin-top: 15px;
+    font-size: 15px;
+  }
+}
+
+/* ======================== */
+/* スライド操作エリアのスタイル（ナビゲーション＋サムネイル） */
+/* ======================== */
+@media print, (min-width: 768px) {
+  .slider-controls {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slider-controls {
+    margin-top: 15px;
+  }
+}
+
+.slider-controls-inner {
+  position: relative;
+}
+
+/* ======================== */
+/* 矢印ナビゲーションのスタイル */
+/* ======================== */
+/* 矢印ボタンのサイズ調整 */
+.slider-nav button {
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+@media print, (min-width: 768px) {
+  .slider-nav button {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slider-nav button {
+    width: 25px;
+  }
+}
+
+/* 矢印アイコンのスタイル */
+.slider-nav button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  background: #c11a51;
+  -webkit-mask: url(/img/download.svg) 0 0 / contain no-repeat;
+  mask: url(/img/download.svg) 0 0 / contain no-repeat;
+  transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+@media print, (min-width: 768px) {
+  .slider-nav button::before {
+    width: 25px;
+    height: 20px;
+    margin-top: -10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slider-nav button::before {
+    width: 19px;
+    height: 15px;
+    margin-top: -7.5px;
+  }
+}
+
+/* 矢印ボタンのホバー・アクティブ状態のスタイル */
+@media print, (min-width: 768px) {
+  .slider-nav button:hover::before,
+  .slider-nav button:active::before {
+    opacity: 0.5;
+  }
+}
+
+/* 左矢印ボタンのスタイル */
+.slider-nav button:nth-child(1) {
+  left: 0;
+}
+.slider-nav button:nth-child(1)::before {
+  left: 0;
+  transform: scaleX(-1);
+}
+
+/* 右矢印ボタンのスタイル */
+.slider-nav button:nth-child(2) {
+  right: 0;
+}
+.slider-nav button:nth-child(2)::before {
+  right: 0;
+}
+
+/* ======================== */
+/* サムネイルのスタイル */
+/* ======================== */
+.slider-thumbnails {
+  overflow: hidden;
+}
+@media print, (min-width: 768px) {
+  .slider-thumbnails {
+    width: 670px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slider-thumbnails {
+    margin: 0 25px;
+  }
+}
+
+/* 中央のサムネイル1つ分の表示枠 */
+.slider-thumbnails-center {
+  width: 20%;
+  margin: 0 auto;
+}
+
+/* サムネイルを横並びに配置 */
+.slider-thumbnails-items {
+  display: flex;
+}
+
+/* 各サムネイルを均等幅に設定 */
+.slider-thumbnails-slide {
+  flex: 1;
+}
+@media print, (min-width: 768px) {
+  .slider-thumbnails-slide {
+    padding: 0 5px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slider-thumbnails-slide {
+    padding: 0 3px;
+  }
+}
+
+/* サムネイルのボタンスタイル */
+.slider-thumbnails-slide button {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1480/832;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.slider-thumbnails-slide button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 2px solid #c11a51;
+  opacity: 0;
+  transition: opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.slider-thumbnails-slide button img {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* サムネイルのホバー・アクティブ状態 */
+@media print, (min-width: 768px) {
+  .slider-thumbnails-slide button:hover,
+  .slider-thumbnails-slide button:active {
+    opacity: 0.5;
+  }
+}
+
+/* 現在のスライドを示すサムネイルのスタイル */
+.slider-thumbnails-slide.is-current button {
+  pointer-events: none;
+}
+.slider-thumbnails-slide.is-current button::before {
+  opacity: 1;
+}
+
+/* ======================== */
+/* グラブカーソルの設定 */
+/* ======================== */
+/* フリック操作中のカーソル変更 */
+.slider.is-grabbing .slider-viewport,
+.slider.is-grabbing .slider-viewport * {
+  cursor: grabbing !important;
+}
+
+/* ======================== */
+/* サムネイルが5個以下のときのレイアウト調整 */
+/* ======================== */
+.slider.is-lte5 .slider-controls {
+  display: flex;
+  justify-content: center;
+}
+@media print, (min-width: 768px) {
+  .slider.is-lte5 .slider-nav button:nth-child(1) {
+    left: -35px;
+  }
+}
+@media print, (min-width: 768px) {
+  .slider.is-lte5 .slider-nav button:nth-child(2) {
+    right: -35px;
+  }
+}
+@media print, (min-width: 768px) {
+  .slider.is-lte5 .slider-thumbnails {
+    width: auto;
+  }
+}
+.slider.is-lte5 .slider-thumbnails-center {
+  width: auto;
+}
+.slider.is-lte5 .slider-thumbnails-track-wrapper {
+  width: auto !important;
+}
+.slider.is-lte5 .slider-thumbnails-track-offset {
+  transform: none !important;
+}
+.slider.is-lte5 .slider-thumbnails-track {
+  transform: none !important;
+}
+.slider.is-lte5 .slider-thumbnails-items {
+  transform: none !important;
+}
+.slider.is-lte5 .slider-thumbnails-slide {
+  flex: none;
+}
+@media print, (min-width: 768px) {
+  .slider.is-lte5 .slider-thumbnails-slide {
+    width: 124px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slider.is-lte5 .slider-thumbnails-slide {
+    width: 53px;
+  }
+}
+
 
 body {
   font-size: 16px;
