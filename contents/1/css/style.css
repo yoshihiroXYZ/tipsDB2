@@ -552,7 +552,7 @@ textarea {
 .map-wrap {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
+  height: 100%;
 }
 
 .map-wrap iframe {
@@ -582,6 +582,11 @@ textarea {
   }
   .contact {
     margin-top: 40px;
+  }
+
+  .map-wrap {
+    height: auto;
+    padding-top: 56.25%;
   }
 
   .map-wrap iframe {
