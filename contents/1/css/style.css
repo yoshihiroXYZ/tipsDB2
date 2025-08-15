@@ -80,6 +80,18 @@ textarea {
   color: inherit;
   vertical-align: top;
 }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* navigation area */
 /* #header {
   position: sticky;
@@ -532,17 +544,23 @@ textarea {
   padding: 80px 12px;
 }
 
-.shopinfo iframe {
-  height: 100%;
-}
-
 .access,
 .contact {
   width: 50%;
 }
 
-iframe {
+.map-wrap {
+  position: relative;
   width: 100%;
+  padding-top: 56.25%;
+}
+
+.map-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .slider {
@@ -564,10 +582,9 @@ iframe {
   }
   .contact {
     margin-top: 40px;
-    height: 480px;
   }
 
-  iframe {
+  .map-wrap iframe {
     width: 100%;
   }
 
