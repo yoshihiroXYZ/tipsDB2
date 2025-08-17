@@ -1,39 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio | your-name</title>
-  <meta name="description" content="制作物のギャラリー" />
-  <meta property="og:title" content="your-name Portfolio" />
-  <meta property="og:description" content="制作物のギャラリー" />
-  <meta property="og:image" content="./images/ogp.png" />
-  <link rel="icon" href="./assets/favicon.svg" />
-  <link rel="stylesheet" href="./styles/main.css" />
-</head>
-<body>
-  <header class="site-header">
-    <h1>your-name Portfolio</h1>
-    <p class="lead">シンプルなギャラリー。カードの「作品の詳細」からモーダルで詳細を表示します。</p>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio | YOSHIHIRO-ISHIKAWA</title>
+    <meta name="description" content="制作物のギャラリー" />
+    <meta property="og:title" content="your-name Portfolio" />
+    <meta property="og:description" content="制作物のギャラリー" />
+    <meta property="og:image" content="./images/ogp.png" />
+    <link rel="icon" href="./assets/favicon.svg" />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>YOSHIHIRO-ISHIKAWA Portfolio</h1>
+      <p class="lead">シンプルなギャラリー。カードの「作品の詳細」からモーダルで詳細を表示します。</p>
+    </header>
 
-  <main>
-    <section id="grid" class="grid" aria-live="polite"></section>
-  </main>
+    <main>
+      <section id="grid" class="grid" aria-live="polite"></section>
+    </main>
 
-  <footer class="site-footer">
-    <small>© <span id="year"></span> your-name</small>
-  </footer>
+    <footer class="site-footer">
+      <small>© <span id="year"></span> YOSHIHIRO-ISHIKAWA</small>
+    </footer>
 
-  <!-- Modal (hidden by default) -->
-  <div id="overlay" class="overlay" hidden></div>
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-    <button id="modal-close" class="modal-close" aria-label="閉じる">×</button>
-    <div id="modal-content" class="modal-content">
-      <!-- JSで中身を差し込み -->
+    <!-- Modal (hidden by default) -->
+    <div id="overlay" class="overlay" hidden></div>
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <button id="modal-close" class="modal-close" aria-label="閉じる">×</button>
+      <div id="modal-content" class="modal-content">
+        <!-- JSで中身を差し込み -->
+      </div>
     </div>
-  </div>
 
-  <script src="./scripts/app.js" defer></script>
-</body>
+    <script src="./scripts/app.js" defer></script>
+  </body>
 </html>
