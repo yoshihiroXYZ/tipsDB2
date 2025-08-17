@@ -15,15 +15,15 @@
     "description": "学習用クイズアプリ。",
     "detail": "カテゴリー別出題、スコア保存（ローカルストレージ）、解説表示に対応した学習用Webアプリ。",
     "tags": ["JavaScript", "WebApp"],
-    "date": "2025-08-14"
+    "date": "2025-08-13"
   },
   {
-    "title": "Landing Page",
-    "url": "https://example.com/landing",
-    "thumb": "./images/thumbs/landing.webp",
-    "description": "LPデザイン例。",
-    "detail": "シンプルな1ページLP。ヒーロー、特徴、CTA、FAQ、フッターで構成。",
-    "tags": ["HTML", "CSS"],
-    "date": "2025-04-10"
+    "title": "YS-DB36",
+    "url": "https://ys-db36.com/",
+    "thumb": "./images/thumbs/ys-db36.png",
+    "description": "wordpressの自作テーマを使用した技術ブログ",
+    "detail": "WordPressの自作テーマを使用した技術ブログ。HTML/CSS/JavaScriptの学習記録や、Web開発に関する情報を発信。",
+    "tags": ["HTML", "CSS", "JavaScript", "WordPress", "PHP"],
+    "date": "2025-08-14"
   }
 ]
